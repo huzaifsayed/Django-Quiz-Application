@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+        <h1 class="h3 mb-0 text-gray-800">Questions</h1>
+        <a href="{% url 'questionscreate' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Create Question</a>
+        </div>          
+
+        <!-- Main Content Here -->
+        
+        <table class="table table-light">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Question</th>
+                <th scope="col">Options</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for ques in questions %}
+              <tr>
+                <th scope="row">{{ques.id}}</th>
+                <td><a href="#">{{ques.label}}</a></td>
+                <td>
+                    <ol>
+                    {% if ques.option1 %}
+                        <li>{{ques.option1 }}</li>
+                    {% endif %}
+                    {% if ques.option2 %}
+                        <li>{{ques.option2 }}</li>
+                    {% endif %}
+                    {% if ques.option3 %}
+                        <li>{{ques.option3 }}</li>
+                    {% endif %}
+                    {% if ques.option4 %}
+                        <li>{{ques.option4 }}</li>
+                    {% endif %}
+                    </ol>
+                </td>
+                <td>
+                  <a href="{% url 'questionsdelete' ques.id %}" class="text-danger">Delete</a>
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        
+    </div>
+    <!-- /.container-fluid -->
+{% endblock content %}
