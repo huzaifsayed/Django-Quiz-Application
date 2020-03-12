@@ -65,7 +65,13 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Questions</span></a>
       </li>
-
+      
+      <!-- Nav Item - Companies -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'questionscreate' %}">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Question Create</span></a>
+      </li>
       <!-- Nav Item - Logout -->
       <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %}">
@@ -118,32 +124,6 @@
     }, 2000)
   </script>
 
-  <!-- Date Time Picker JS -->
-  <script src="{% static 'date-time-phone/jquery-ui.js' %}" ></script>
-  <script src="{% static 'date-time-phone/jquery-ui-timepicker-addon.js' %}"></script> 
-
-  <script>
-    $( function() {
-        // $( "#id_birth_date" ).datetimepicker({ dateFormat: 'yy-mm-dd', maxDate: 0, controlType: 'select'}).attr("autocomplete", "off") ;
-        // $( "#id_birth_date" ).timepicker({ dateFormat: 'yy-mm-dd', maxDate: 0, controlType: 'select'}).attr("autocomplete", "off") ;
-        $( "#id_birth_date" ).datepicker({ dateFormat: 'yy-mm-dd' }).attr("autocomplete", "off") ;
-    });
-  </script>
-  <!-- Date Time Picker JS -->
-
-  <!-- Phone Mask JS -->
-  <script src="{% static 'date-time-phone/jquery-input-mask-phone-number.min.js' %}"></script> 
-
-  <script>
-    //(xxx) xxx-xxxx format code
-    $(document).ready(function () {
-        $('#id_phone_number').usPhoneFormat({
-            format: '(xxx) xxx-xxxx',
-        });   
-    });
-  </script>
-  <!-- Phone Mask JS -->
-
-</body>
+ </body>
 
 </html>
